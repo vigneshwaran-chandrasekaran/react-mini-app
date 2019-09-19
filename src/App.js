@@ -7,6 +7,7 @@ import Movie from './components/Movie';
 import axios from './services/axios';
 import SearchInfo from './components/SearchInfo';
 import Loader from './components/Loader';
+import Shimmer from './components/Shimmer';
 import NoMoviesFound from './components/NoMoviesFound';
 
 function App() {
@@ -36,7 +37,10 @@ function App() {
         console.log(error);
       })
       .finally(() => {
-        setLoader(false);
+        // to increase curiosity for users
+        setTimeout(() => {
+          setLoader(false);
+        }, 1000);
         // always executed
       });
   };
@@ -51,6 +55,10 @@ function App() {
   };
 
   const showResults = () => {
+    if (loader) {
+      return <Shimmer />;
+    }
+
     if (count > 0 && movies) {
       return (
         <>
@@ -64,6 +72,8 @@ function App() {
         </>
       )
     }
+
+
     return (<NoMoviesFound />)
   }
 
@@ -74,6 +84,7 @@ function App() {
         onSubmitHandle={onSubmitHandle}
         searchTerm={searchTerm}
         searchOnChange={searchOnChange} />
+
       {showResults()}
     </div>
   );
