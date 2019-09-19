@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export default function Shimmer() {
+const Shimmer = () => {
     return (
         <div className="shimmer-container mt-5">
             <div className="post d-flex justify-content-around">
@@ -12,3 +12,5 @@ export default function Shimmer() {
         </div>
     )
 }
+
+export default Shimmer;

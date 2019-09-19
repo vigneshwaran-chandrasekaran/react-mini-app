@@ -10,28 +10,24 @@ import Shimmer from './components/Shimmer';
 import NoMoviesFound from './components/NoMoviesFound';
 import ReactPaginate from 'react-paginate';
 
-function App() {
+const App = () => {
 
   const [loader, setLoader] = useState(false); // set top loader
   const [movies, setMovies] = useState([]); // set list of movies
   const [count, setCount] = useState(0); // set movie count info
   const [page, setPage] = useState(0); // set movie count info
-  const [searchTerm, setSearchTerm] = useState('batman');
+  const [searchTerm, setSearchTerm] = useState('batman'); // to set search term
 
   // will call first time when page loads, then when ever page changes
   useEffect(() => {
-    console.log('init');
     getMovies();
   }, [page]);
 
   const getMovies = () => {
     setLoader(true);
-    console.log('searchTerm', searchTerm);
-    console.log('page', page);
     axios.get(`?i=tt3896198&apikey=fa281222&s=${searchTerm}&page=${page + 1}`)
       .then((response) => {
         // handle success
-        console.log(response.data);
         setMovies(response.data.Search);
         setCount(response.data.totalResults);
       })
@@ -58,11 +54,7 @@ function App() {
   };
 
   const pageOnChange = (pages) => {
-    console.log('pageOnChange');
-    console.log(pages.selected);
     setPage(pages.selected);
-    console.log(page);
-    getMovies();
   };
 
   const lastPage = () => {
@@ -83,7 +75,6 @@ function App() {
               {movies && movies.map((movie, i) => <Movie key={i} {...movie} />)}
             </div>
           </section>
-          {/* <Pagination currentPage={2} lastPage={lastPage()} clickEvent={pageOnChange} /> */}
           <div id="react-paginate" className='d-flex justify-content-center'>
             <ReactPaginate
               pageLinkClassName='btn btn-info'
@@ -97,8 +88,6 @@ function App() {
         </>
       )
     }
-
-
     return (<NoMoviesFound />)
   }
 

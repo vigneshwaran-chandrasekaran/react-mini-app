@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Loader({ loader }) {
+const Loader = ({ loader }) => {
     return (
         loader ? <div className="loader-line"></div> : null
     )

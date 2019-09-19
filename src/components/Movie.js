@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import Image from './Image';
 
-export default function Movie({ Title, Year, imdbID, Poster, Type }) {
+const Movie = ({ Title, Year, imdbID, Poster, Type }) => {
     return (
         <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-5 d-flex justify-content-center'>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={Poster} />
+                <Image src={Poster} title={Title} />
                 <Card.Body>
                     <table>
                         <tbody>
@@ -32,3 +34,22 @@ export default function Movie({ Title, Year, imdbID, Poster, Type }) {
         </div>
     )
 }
+
+
+Movie.defaultProps = {
+    Title: '',
+    Year: '',
+    imdbID: '',
+    Poster: '',
+    Type: ''
+};
+
+Movie.propTypes = {
+    Title: PropTypes.string,
+    Year: PropTypes.string,
+    imdbID: PropTypes.string,
+    Poster: PropTypes.string,
+    Type: PropTypes.string
+};
+
+export default Movie;

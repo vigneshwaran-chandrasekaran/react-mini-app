@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function SearchInfo({ count, searchTerm }) {
+const SearchInfo = ({ count, searchTerm }) => {
     return (
         <div className='my-4 px-5'>
             <h4>
@@ -12,3 +13,15 @@ export default function SearchInfo({ count, searchTerm }) {
         </div>
     )
 }
+
+SearchInfo.defaultProps = {
+    searchTerm: '',
+    count: 0,
+};
+
+SearchInfo.propTypes = {
+    searchTerm: PropTypes.string,
+    count: PropTypes.number,
+};
+
+export default SearchInfo;

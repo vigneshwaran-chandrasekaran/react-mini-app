@@ -1,7 +1,8 @@
 import React from 'react';
 import { Nav, Navbar, NavDropdown, Form, FormControl } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
-export default function Header(props) {
+const Header = (props) => {
     return (
         <Navbar bg="light" expand="lg">
             <Navbar.Brand>Movie Catalog</Navbar.Brand>
@@ -24,3 +25,15 @@ export default function Header(props) {
         </Navbar>
     )
 }
+
+Header.defaultProps = {
+    searchTerm: 'batman',
+};
+
+Header.propTypes = {
+    searchTerm: PropTypes.string,
+    onSubmitHandle: PropTypes.func,
+    searchOnChange: PropTypes.func
+};
+
+export default Header;
