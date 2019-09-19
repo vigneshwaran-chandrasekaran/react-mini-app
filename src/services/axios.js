@@ -3,7 +3,7 @@ import axios from 'axios';
 /**
  * set baseurl for all axios request
  */
-axios.defaults.baseURL = `http://www.omdbapi.com/`;
+axios.defaults.baseURL = `https://www.omdbapi.com/`;
 
 // Add a request interceptor
 axios.interceptors.request.use(function (config) {
