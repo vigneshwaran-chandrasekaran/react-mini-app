@@ -8,8 +8,8 @@ const SearchInfo = ({ count, searchedKey }) => {
         <div className='my-4 px-5'>
             <h4>
                 You searched for:
-                <span className='font-weight-bold'> {searchedKey}</span>,
-                <span className='font-weight-bold'> {count} </span>
+                <span className='font-weight-bold text-muted'> {searchedKey}</span>,
+                <span className='font-weight-bold text-muted'> {count} </span>
                 results found
             </h4>
         </div>
