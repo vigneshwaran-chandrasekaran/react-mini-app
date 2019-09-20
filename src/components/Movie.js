@@ -18,7 +18,7 @@ const Movie = ({ Title, Year, imdbID, Poster, Type }) => {
                                 data-toggle="tooltip" title="Release year">{Year}</span>
                             <span data-toggle="tooltip" title="Film genre">{Type}</span>
                         </div>
-                        <div class="badge badge-info movie-i" data-toggle="tooltip" title="IMDb ID">{imdbID}</div>
+                        <div class="badge badge-info movie-i" data-toggle="tooltip" title="IMDb ID">{imdbID.toUpperCase()}</div>
                     </div>
                 </Card.Body>
             </Card>
