@@ -20,27 +20,6 @@ const Movie = ({ Title, Year, imdbID, Poster, Type }) => {
                         </div>
                         <div class="badge badge-info movie-i" data-toggle="tooltip" title="IMDb ID">{imdbID}</div>
                     </div>
-
-                    <table>
-                        <tbody>
-                            {/* <tr>
-                                <td valign="top" className='font-weight-bold'>Name: </td>
-                                <td>{Title}</td>
-                            </tr> */}
-                            {/* <tr>
-                                <td className='font-weight-bold'>Year: </td>
-                                <td>{Year}</td>
-                            </tr> */}
-                            <tr>
-                                <td className='font-weight-bold'>IMDb ID: </td>
-                                <td>{imdbID}</td>
-                            </tr>
-                            {/* <tr>
-                                <td className='font-weight-bold'>Type: </td>
-                                <td>{Type}</td>
-                            </tr> */}
-                        </tbody>
-                    </table>
                 </Card.Body>
             </Card>
         </div>
