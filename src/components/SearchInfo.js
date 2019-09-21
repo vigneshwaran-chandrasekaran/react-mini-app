@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchInfo = ({ count, searchedKey }) => {
-    console.log({ count });
-    console.log({ searchedKey });
+const SearchInfo = ({ count, searchedKey, page, lastPage }) => {
+    console.log({ page });
+    console.log({ lastPage });
     return (
         <div className='my-4 px-5'>
             <h4>
                 You searched for:
                 <span className='font-weight-bold text-muted'> {searchedKey}</span>,
-                <span className='font-weight-bold text-muted'> {count} </span>
-                results found
+                <span className='font-weight-bold text-muted'> {count} </span>results found, showing page
+                <span className='font-weight-bold text-muted'> {page} of {lastPage} </span>
             </h4>
         </div>
     )

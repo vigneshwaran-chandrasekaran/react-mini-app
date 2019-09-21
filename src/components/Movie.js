@@ -14,11 +14,11 @@ const Movie = ({ Title, Year, imdbID, Poster, Type }) => {
                     </div>
                     <div className='d-flex justify-content-between my-2'>
                         <div className='d-flex justify-content-start'>
-                            <span class="badge badge-warning movie-i mr-2"
+                            <span className="badge badge-warning movie-i mr-2"
                                 data-toggle="tooltip" title="Release year">{Year}</span>
                             <span data-toggle="tooltip" title="Film genre">{Type}</span>
                         </div>
-                        <div class="badge badge-info movie-i" data-toggle="tooltip" title="IMDb ID">{imdbID.toUpperCase()}</div>
+                        <div className="badge badge-info movie-i" data-toggle="tooltip" title="IMDb ID">{imdbID.toUpperCase()}</div>
                     </div>
                 </Card.Body>
             </Card>
