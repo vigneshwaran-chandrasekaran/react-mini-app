@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Pagination from "react-js-pagination";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/style.scss';
 import Header from './components/Header';
@@ -9,7 +8,7 @@ import SearchInfo from './components/SearchInfo';
 import Loader from './components/Loader';
 import Shimmer from './components/Shimmer';
 import NoMoviesFound from './components/NoMoviesFound';
-// import Pagination from './components/Pagination';
+import Pagination from './components/Pagination';
 
 const App = () => {
 
@@ -24,7 +23,6 @@ const App = () => {
    * will call first time when page loads, then when ever page changes
    */
   useEffect(() => {
-    console.log('useEffect', page)
     getMovies();
   }, [page]);
 
@@ -76,7 +74,6 @@ const App = () => {
    * every time pagination button clicked this event will invoke
    */
   const pageOnChange = (pages) => {
-    console.log('pageOnChange', pages);
     setPage(pages);
   };
 
@@ -114,18 +111,7 @@ const App = () => {
               {movies && movies.map((movie, i) => <Movie key={i} {...movie} />)}
             </div>
           </section>
-          <div className='d-flex justify-content-center'>
-            <Pagination
-              activePage={page}
-              itemsCountPerPage={10}
-              totalItemsCount={count}
-              pageRangeDisplayed={10}
-              onChange={pageOnChange}
-              linkClass='m-1 btn btn-info'
-              activeLinkClass='active'
-            />
-          </div>
-          {/* <Pagination items={count} onChangePage={pageOnChange} /> */}
+          <Pagination page={page} count={count} pageOnChange={pageOnChange} />
         </>
       )
     }

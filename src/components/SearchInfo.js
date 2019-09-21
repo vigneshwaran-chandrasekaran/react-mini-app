@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SearchInfo = ({ count, searchedKey, page, lastPage }) => {
-    console.log({ page });
-    console.log({ lastPage });
     return (
         <div className='my-4 px-5'>
             <h4>
@@ -17,11 +15,14 @@ const SearchInfo = ({ count, searchedKey, page, lastPage }) => {
 }
 
 SearchInfo.defaultProps = {
+    page: 1,
     searchedKey: 'batman',
     count: '0',
 };
 
 SearchInfo.propTypes = {
+    page: PropTypes.number,
+    lastPage: PropTypes.number,
     searchedKey: PropTypes.string,
     count: PropTypes.string,
 };
