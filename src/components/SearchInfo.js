@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const SearchInfo = ({ count, searchedKey, page, lastPage }) => {
     return (
-        <div className='my-4 px-5'>
+        <div className='my-4 shadow-none p-3 bg-light rounded'>
             <h4>
                 You searched for:
                 <span className='font-weight-bold text-muted'> {searchedKey}</span>,

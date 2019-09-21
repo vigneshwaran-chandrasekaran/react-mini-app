@@ -65,8 +65,14 @@ const App = () => {
    */
   const onSubmitHandle = (event) => {
     event.preventDefault();
-    setSearchedKey(searchTerm);
-    getMovies();
+    /**
+     * if search term is empty then no search will make
+     */
+    if (searchTerm !== '') {
+      setPage(1);
+      setSearchedKey(searchTerm);
+      getMovies();
+    }
   };
 
   /**
@@ -128,7 +134,6 @@ const App = () => {
         onSubmitHandle={onSubmitHandle}
         searchTerm={searchTerm}
         searchOnChange={searchOnChange} />
-
       {showResults()}
     </div>
   );
