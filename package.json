@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://vigneshwaran-chandrasekaran.github.io/react-mini-app/",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "gh-pages": "^2.2.0",
     "node-sass": "^4.14.1",
